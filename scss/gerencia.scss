@@ -1,0 +1,132 @@
+// variaveis iniciadas
+$verde : #aae4d8;
+$verdeescuro : #1d7462;
+$azul : rgb(98, 98, 241);
+$vermelho : #fa0a0a;
+$cinza-claro : #DFE6ED;
+$cinza-medio : #C3CFD9;
+$cinza-escuro : #788898;
+$pretosombra : black;
+$branco : rgba(255, 255, 255, 0.993);
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: $verde;
+    height: 100vh;
+    padding: 30px;
+}
+
+.cabecalho {
+    display: flex;
+    height: 70px;
+    align-items: center;
+    padding: 10px;
+
+    &_processo {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-flow: 1;
+        width: 100%;
+        gap: 5px;
+        padding: 10px;
+
+        &__link {
+            display: flex;
+            background-color: $azul;
+            justify-content: center;
+            align-items: center;
+            color: $branco;
+            border-radius: 5px;
+            text-decoration: none;
+            height: 40px;
+            padding: 5px;
+
+            @media screen and (max-width: 640px) {
+                font-size: 15px;
+                width: 70px;
+            }
+
+            @media screen and (min-width: 641px) {
+                font-size: 20px;
+                width: 90px;
+            }
+        }
+    }
+
+    >p {
+        @media screen and (max-width: 640px) {
+            width: 100%;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        @media screen and (min-width: 641px) {
+            width: 25%;
+            font-size: 30px;
+        }
+    }
+
+}
+
+.card_principal {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+
+    &__Itens {
+        display: flex;
+        flex-direction: column;
+        background-color: $cinza-claro;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 320px;
+        width: 320px;
+        padding: 20px;
+        border: 2px solid $cinza-medio;
+        border-radius: 6px;
+
+        >input {
+            border-radius: 5px;
+            border: 2px solid $cinza-medio;
+            height: 40px;
+            width: 270px;
+            text-align: center;
+        }
+
+        >button {
+            background-color: $verdeescuro;
+            color: $branco;
+            border-radius: 5px;
+            height: 30px;
+            font-size: 18px;
+            width: 270px;
+            border: none;
+        }
+
+        >p {
+            font-size: 30px;
+        }
+
+    }
+}
+
+th:first-child {
+    width: 300px
+}
+
+button:active {
+    background-color: $verdeescuro;
+    box-shadow: 0 2px $verdeescuro ;
+    transform: translateY(3px);
+}
+
+a:hover {
+    background-color: $cinza-escuro;
+}

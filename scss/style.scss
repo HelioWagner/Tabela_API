@@ -1,0 +1,195 @@
+// variaveis iniciadas
+$verde : #aae4d8;
+$verdeescuro : #1d7462;
+$azul : rgb(98, 98, 241);
+$vermelho : #fa0a0a;
+$cinza-claro : #DFE6ED;
+$cinza-medio : #C3CFD9;
+$cinza-escuro : #788898;
+$pretosombra : black;
+$branco : rgba(255, 255, 255, 0.993);
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: $verde;
+  height: 100vh;
+  padding: 30px;
+}
+
+.cabecalho {
+  display: flex;
+  height: 70px;
+  align-items: center;
+  padding: 10px;
+
+  &_processo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-flow: 1;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+
+    &__link {
+      display: flex;
+      background-color: $azul;
+      justify-content: center;
+      align-items: center;
+      color: $branco;
+      border-radius: 5px;
+      text-decoration: none;
+      height: 40px;
+      padding: 5px;
+
+      @media screen and (max-width: 640px) {
+        font-size: 15px;
+        width: 70px;
+      }
+
+      @media screen and (min-width: 641px) {
+        font-size: 20px;
+        width: 90px;
+      }
+    }
+
+    >button {
+      margin-right: 20px;
+      background-color: $cinza-escuro;
+      color: $branco;
+      border-radius: 5px;
+      height: 40px;
+      font-size: 20px;
+      width: 90px;
+      border: none;
+    }
+
+    >input {
+      height: 30px;
+      font-size: 20px;
+      width: 300px;
+      border-radius: 5px;
+      border: $cinza-claro;
+      text-align: center;
+    }
+  }
+
+  >p {
+    @media screen and (max-width: 640px) {
+      width: 100%;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    @media screen and (min-width: 641px) {
+      width: 25%;
+      font-size: 30px;
+    }
+  }
+
+
+}
+
+.card_principal {
+  background-color: $cinza-claro;
+  height: 95%;
+  padding: 10px;
+  border: 2px solid $cinza-medio;
+  border-radius: 6px;
+
+  >button {
+    margin-right: 20px;
+    background-color: $verdeescuro;
+    color: $branco;
+    border-radius: 5px;
+    border: none;
+
+    @media screen and (max-width: 640px) {
+      height: 30px;
+      font-size: 14px;
+      width: 110px;
+    }
+
+    @media screen and (min-width: 641px) {
+      height: 40px;
+      font-size: 20px;
+      width: 150px;
+    }
+
+
+  }
+
+
+  &__Lista {
+    margin-top: 10px;
+    border-collapse: collapse;
+    border: 1px solid black;
+    width: 100%;
+
+    &__itens {
+      height: 30px;
+      border: 3px solid $cinza-medio;
+      background-color: $branco;
+      text-align: left;
+      padding: 5px;
+
+    }
+
+
+
+    >td:first-child {
+      @media screen and (max-width: 640px) {
+        width: 100px
+      }
+
+      @media screen and (min-width: 641px) {
+        width: 300px
+      }
+
+    }
+  }
+
+  >p {
+
+    @media screen and (max-width: 640px) {
+      display: inline;
+      width: 100%;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    @media screen and (min-width: 641px) {
+      display: inline-block;
+      width: 25%;
+      font-size: 30px;
+    }
+  }
+
+}
+
+th:first-child {
+  @media screen and (max-width: 640px) {
+    width: 100px
+  }
+
+  @media screen and (min-width: 641px) {
+    width: 300px
+  }
+
+}
+
+button:active {
+  background-color: $verdeescuro;
+  box-shadow: 0 2px $verdeescuro ;
+  transform: translateY(3px);
+}
+
+a:hover {
+  background-color: $cinza-escuro;
+}
