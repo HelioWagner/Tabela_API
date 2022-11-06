@@ -7,14 +7,22 @@ async function GetAPI(url){
 }
 
 
-async function PostEmAPI(url,body){
-    const fetchResposta = await fetch(url,{
-         method: 'POST',
-         body: json.stringify(body),
-         headers: {'Content-Type': 'application/json'}
-    })
-    const respostaEmJson = await fetchRespost.json()
-    return respostaEmJson
+async function PostEmAPI(url,inputTitleValue,inputDescriptionValue){
+    const fetchOptions = {
+        method: "POST",
+        body: JSON.stringify({
+          title: inputTitleValue,
+          description: inputDescriptionValue
+        }),
+        headers: {"Content-type": "application/json"}
+      }
+      const response = await fetch(url, fetchOptions)
+     // console.log(response)
+      const responseData = await response.json()
+     // console.log("responseData"+JSON.stringify(responseData))
+      //JSON.stringify(responseData)
+      return  responseData
+
 }
 
 

@@ -2,10 +2,24 @@ function adiciona_add_event_listener(tag,evento,funcao){
     document.querySelector(tag).addEventListener(evento, funcao)
 }
 
-function busca_dados_informados(tag) {
+function busca_dados_informados(tag,valida) {
     dados = document.querySelector(tag).value
-    valida_dados(dados)
+    if (valida == 'S')
+       valida_dados(dados)
     return dados
+}
+
+function Informa_dados_tag(tag,retorno_api) {
+   dados = document.querySelector(tag)
+   console.log(retorno_api)
+   if (Number(retorno_api) > 0  ){
+      dados.innerHTML = 'Cadastro realizado com sucesso'
+      dados.style.color = "#045344";  
+    }
+    else{
+        dados.innerHTML = 'Cadastro realizado com erro'
+        dados.style.color = "#fa0a0a"  
+    }    
 }
 
 function valida_dados(dados_entrada) {
@@ -27,15 +41,15 @@ function monta_lista(resultado,tag) {
 
     resultado.forEach( elemento => {
         linhas += `<tr>
-                   <td class="card_principal__Lista__itens">${elemento.title}</td>  
+                   <td class="card_principal__Lista__itens card_principal__titulo">${elemento.title}</td>  
                    <td class="card_principal__Lista__itens">${elemento.description}</td>                 
                    </tr>` 
     })
     
-    console.log(linhas)
+    //console.log(linhas)
 
     dados.innerHTML = cabecalho+linhas
 }
 
 
-module.exports = {adiciona_add_event_listener,busca_dados_informados,monta_lista} 
+module.exports = {adiciona_add_event_listener,busca_dados_informados,monta_lista,Informa_dados_tag} 
